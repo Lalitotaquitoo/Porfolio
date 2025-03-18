@@ -1,0 +1,45 @@
+---
+import { compile } from "tailwindcss";
+import CompetitionsItem from "./CompetitionsItem.astro";
+
+const COMPETITIONS = [
+  {
+    date: "Octubre 2024",
+    title:
+      "Participante del Reto estudiantil para generación de soluciones biomédicas",
+    description:
+      "Expedida por el Instituto Nacional de Astrofísica, Óptica y Electrónica · oct. 2024.",
+  },
+  {
+    date: "Julio 2024",
+    title: "Finalista del Copa de Comunidades de Programación 2024",
+    description:
+      "Expedida por Google Hola · jul. 2024. Ubicado en el lugar 138 del El Salvador, Guatemala, Honduras, México y Perú, representando al estado de Jalisco como primer lugar.",
+    link: "https://omegaup.com/arena/ccp-2024/scoreboard/sYNVCb6LM9xFMb64kyGuaLCeVTFJxv?fbclid=IwY2xjawJFWjZleHRuA2FlbQIxMAABHTodDkk8IBhVHSJh8gm7D-GQlZ6KAUGrYyqiVdUpFA1rDHAsQuenH9CSLA_aem_1xnfSprDqIwZrHHKcZ5frg",
+  },
+  {
+    date: "Agosto 2022",
+    title: "Finalista de la 27ª Olimpiada Mexicana de Informática",
+    description:
+      "Expedida por Comité Mexicano de Informática · ago. 2022. Ubicado en el lugar 85 del país, representado al estado de Chiapas como primer lugar.",
+    link: "https://www.olimpiadadeinformatica.org.mx/Resultados/Olimpiada/Resultados?clave=27&tipo=OMI",
+  },
+  {
+    date: "Agosto 2021",
+    title: "Finalista de la 26ª Olimpiada Mexicana de Informática",
+    description:
+      "Expedida por Comité Mexicano de Informática · ago. 2021. Ubicado en el lugar 74 del país, representado al estado de Chiapas como primer lugar.",
+    link: "https://www.olimpiadadeinformatica.org.mx/Resultados/Olimpiada/Resultados?clave=26&tipo=OMI",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    COMPETITIONS.map((competitions) => (
+      <li class="mb-10 ms-4">
+        <CompetitionsItem {...competitions} />
+      </li>
+    ))
+  }
+</ol>

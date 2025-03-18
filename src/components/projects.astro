@@ -1,0 +1,63 @@
+---
+import Python from "./icons/Python.astro";
+import FLET from "./icons/Flet.astro";
+
+const TAGS = {
+  PYTHON: {
+    name: "Python",
+    class: "bg-white text-black",
+    icon: Python,
+  },
+  FLET: {
+    name: "Flet",
+    class: "bg-white text-black",
+    icon: FLET,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Pomodoro Timer-App",
+    description:
+      "Aplicación interactiva diseñada para mejorar la productividad utilizando la técnica Pomodoro. Con un diseño atractivo y funciones avanzadas, este temporizador te ayudará a mantenerte enfocado en tus tareas.",
+    image: "/projects/pomodoro1.webp",
+    additionalImage: "/projects/pomodoro.webp",
+    link: "https://github.com/Lalitotaquitoo/Pomodoro",
+    tags: [TAGS.PYTHON, TAGS.FLET],
+    github: "#",
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, additionalImage, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-blue-200">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex justify-center gap-x-4 flex-row">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <div style="position: relative; display: flex; justify-content: center; height: 200px;">
+        <img
+          src={image}
+          alt={`captura de pantalla ${image}`}
+          style="position: absolute; left: -100px;"
+        />
+        <img
+          src={additionalImage}
+          alt={`captura de pantalla ${additionalImage}`}
+          style="position: absolute; right: -100px;"
+        />
+      </div>
+    </article>
+  ))
+}

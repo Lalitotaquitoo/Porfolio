@@ -1,11 +1,97 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/Linkedin.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import SocialPill from "../components/SocialPill.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Competitions from "../components/Competitions.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TournamentsIcon from "../components/icons/TournamentsIcon.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/projects.astro";
+import BatIcon from "../components/icons/Bat.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Portafolio de Eduardo Villanueva -Desarrollador y programador"
+  description="Contrata a Eduardo Villanueva para tu proyecto de desarrollo web, aplicaciones de analisis de datos y ciberseguridad."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="https://media.licdn.com/dms/image/v2/D4E03AQFA1DKWVgb1uw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720754218696?e=1747872000&v=beta&t=eU9w7LXzIgc1nGJjiE234xTrv5mVrsiq_KTGO5GZnyc"
+        alt="Eduardo photo"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey,<span class="text-red-500">Soy Eduardo</span>
+        <a
+          href="https://www.linkedin.com/in/eduvillaU/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-pretty max-w-[700px]">
+        <span> Estudiante de Ingeneria en Computación.</span>
+        <span class="text-blue-400">
+          En la Universidad de Guadalajara.</span
+        ><span class="text-amber-100">
+          Desarollador de aplicaciones de Analisis de Datos y Ciberseguridad</span
+        >. <span class='opacity-80"'> Apasinado de la Bioinformática</span>
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/eduvillaU/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Lalitotaquitoo">
+          <GithubIcon class="size-4 md:size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="mailto:eduardo.villanueva.utrilla@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          eduardo.villanueva.utrilla@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="torneos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <TournamentsIcon class="size-7" />
+        Torneos
+      </h2>
+      <Competitions />
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer class="py-60 pb-32" id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BatIcon class="size-7" />
+        Sobre mi
+      </h2>
+      <h2 class="text-pretty text-xl flex gap-x-3 items-center">
+        <img
+          class="rounded-full size-40 mb-4"
+          src="https://media.licdn.com/dms/image/v2/D4E03AQFA1DKWVgb1uw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720754218696?e=1747872000&v=beta&t=eU9w7LXzIgc1nGJjiE234xTrv5mVrsiq_KTGO5GZnyc"
+          alt="Eduardo photo"
+        />
+        Soy un estudiante de Ingeniería en Computación en la Universidad de Guadalajara.
+        Me apasiona la programación Competitiva y el machineLearning . Actualmente
+        estoy aprendiendo sobre el desarrollo de aplicaciones de análisis de datos
+        y la bioinformática.
+      </h2>
+    </SectionContainer>
+  </main>
 </Layout>
